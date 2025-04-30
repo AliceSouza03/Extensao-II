@@ -1,0 +1,138 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #5cb85c; /* Verde suave */
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Opcional: centralizar os links */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav a {
+    color: white; /* Cor base dos links */
+    text-decoration: none;
+    padding: 0.5em 1em; /* Adiciona um pouco de espaço ao redor do texto do link */
+    border-radius: 5px; /* Opcional: bordas arredondadas */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
+}
+
+nav a:hover {
+    background-color: #4cae4c; /* Verde mais escuro ao passar o mouse */
+    color: white; /* Texto branco ao passar o mouse */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin: 20px auto; /* Centraliza o elemento horizontalmente */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 75%;
+}
+
+h2, h3 {
+    color: #5cb85c;
+}
+
+.temas img {
+    display: inline-block;
+    background-color: #ebae59;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.temas a{
+    text-decoration: none;
+    color: inherit; /* Mantém a cor do texto do link igual à cor do tema */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+.carrossel-container {
+    width: 100%; /* Largura do seu carrossel */
+    margin: 20px auto; /* Centralizar o carrossel na página */
+    overflow: hidden; /* Esconde as imagens que estão fora da largura do contêiner */
+    position: relative; /* Para posicionar os botões */
+}
+
+.carrossel-imagens {
+    display: flex; /* Coloca as imagens lado a lado */
+    transition: transform 0.5s ease-in-out; /* Adiciona uma transição suave para o movimento */
+}
+
+.carrossel-imagens img {
+    width: 100%; /* Cada imagem ocupa a largura do contêiner */
+    height: 100%; /* Cada imagem ocupa a altura do contêiner */
+    flex-shrink: 0; /* Impede que as imagens encolham */
+}
+
+.botao-anterior, .botao-proximo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    z-index: 10; /* Garante que os botões fiquem acima das imagens */
+}
+
+.botao-anterior {
+    left: 10px;
+}
+
+.botao-proximo {
+    right: 10px;
+}
+
+.botao-anterior:hover, .botao-proximo:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+section img {
+    max-width: 20%; /* Garante que a imagem não ultrapasse a largura da seção */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaços extras abaixo da imagem */
+    float: left; /* para alinhar à direita */
+    margin-right: 10px; /* Adiciona espaço entre a imagem e o título */
+    max-width: 140px;
+    height: auto;
+}
+
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
