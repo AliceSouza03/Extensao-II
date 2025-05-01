@@ -37,32 +37,3 @@ document.addEventListener('DOMContentLoaded', function() {
         moverCarrossel();
     });
 });
-
-const formulario = document.getElementById('formulario-opiniao');
-    const listaOpinioes = document.getElementById('lista-opinioes');
-    let opinioesSalvas = localStorage.getItem('opinioes') ? JSON.parse(localStorage.getItem('opinioes')) : [];
-
-    function exibirOpinioes() {
-      listaOpinioes.innerHTML = '';
-      opinioesSalvas.forEach(opiniao => {
-        const elementoOpiniao = document.createElement('div');
-        elementoOpiniao.innerHTML = `<p><strong>${opiniao.nome || 'Anônimo'}:</strong> ${opiniao.texto}</p><hr>`;
-        listaOpinioes.appendChild(elementoOpiniao);
-      });
-    }
-
-    formulario.addEventListener('submit', function(event) {
-      event.preventDefault(); // Impede o envio tradicional do formulário
-
-      const nome = document.getElementById('nome').value;
-      const texto = document.getElementById('opiniao').value;
-
-      const novaOpiniao = { nome: nome, texto: texto };
-      opinioesSalvas.push(novaOpiniao);
-      localStorage.setItem('opinioes', JSON.stringify(opinioesSalvas));
-
-      formulario.reset(); // Limpa o formulário
-      exibirOpinioes(); // Atualiza a lista de opiniões
-    });
-
-    exibirOpinioes(); // Exibe as opiniões ao carregar a página
